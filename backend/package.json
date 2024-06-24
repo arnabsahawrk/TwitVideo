@@ -1,0 +1,33 @@
+{
+  "name": "twit-video",
+  "version": "1.0.0",
+  "description": "This project is a complex backend project that is built with nodejs, express, mongodb, mongoose, jwt, bcrypt, and many more. This project is a complete backend project that has all the features that a backend project should have.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnabsahawrk/TwitVideo.git"
+  },
+  "keywords": [
+    "twit-video",
+    "backend",
+    "javascript",
+    "node",
+    "express",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Arnab Saha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnabsahawrk/TwitVideo/issues"
+  },
+  "homepage": "https://github.com/arnabsahawrk/TwitVideo#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.2"
+  }
+}
