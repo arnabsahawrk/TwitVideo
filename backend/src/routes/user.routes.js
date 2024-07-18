@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-  loginUser,
+  logInUser,
   logOutUser,
   registerUser,
 } from "../controllers/user.controller.js";
@@ -23,7 +23,7 @@ router.route("/register").post(
   registerUser
 );
 
-router.route("/login").post(loginUser);
+router.route("/login").post(logInUser);
 
 router.route("/logout").post(verifyJWT, logOutUser);
 

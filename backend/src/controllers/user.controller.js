@@ -93,7 +93,7 @@ const registerUser = asyncHandler(async (req, res) => {
     .json(new apiResponse(200, createdUser, "User registered successfully"));
 });
 
-const loginUser = asyncHandler(async (req, res) => {
+const logInUser = asyncHandler(async (req, res) => {
   //req body -> data
   //username or email
   //find the user
@@ -103,7 +103,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const { email, username, password } = req.body;
 
-  if (!username || !email) {
+  if (!username && !email) {
     throw new apiError(400, "username or email is required");
   }
 
@@ -152,11 +152,11 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const logOutUser = asyncHandler(async (req, res) => {
-  User.findByIdAndUpdate(
+  await User.findByIdAndUpdate(
     req.user._id,
     {
-      $set: {
-        refreshToken: undefined,
+      $unset: {
+        refreshToken: 1, // this removes the field from document
       },
     },
     {
@@ -176,4 +176,4 @@ const logOutUser = asyncHandler(async (req, res) => {
     .json(new apiResponse(200, {}, "User Logged Out"));
 });
 
-export { registerUser, loginUser, logOutUser };
+export { registerUser, logInUser, logOutUser };
